@@ -21,12 +21,12 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
         setContentView(R.layout.activity_main)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        fetchData()
+        fetchDatas()
         mAdapter = NewsListAdapter(this)
         recyclerView.adapter = mAdapter
     }
 
-    private fun fetchData() {
+    private fun fetchDatas() {
         val url = "https://newsapi.org/v2/top-headlines?country=in&category=science&piKey=1f4a12d2698e432ea9cf18126dcc7acd"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,
